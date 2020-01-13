@@ -21,7 +21,7 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="alta.htm">altaController</prop>
-
+                <prop key="listado.htm">ListadoController</prop>
             </props>
         </property>
     </bean>
@@ -40,5 +40,9 @@
 
      <bean name="altaController"
           class="araneda.nicole.Controllers.altaController"
+          />
+     
+     <bean name="ListadoController"
+          class="araneda.nicole.Controllers.ListadoController"
           />
 </beans>

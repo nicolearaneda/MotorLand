@@ -15,21 +15,20 @@ public class Motor {
     private int potencia;
     private int peso;
     private int cantidad;
+    private int optimo;
 
-    public Motor() {
-    }
-
-    public Motor(String modelo) {
-        this.modelo = modelo;
-    }
-
+    public Motor()
+    {}
+    
     public Motor(String modelo, String fabricante,
-            int potencia, int peso, int cantidad) {
+            int potencia, int peso, int cantidad, int optimo)
+    {
         this.modelo = modelo;
         this.fabricante = fabricante;
         this.potencia = potencia;
         this.peso = peso;
         this.cantidad = cantidad;
+        this.optimo = (peso/potencia);
     }
 
     public String getModelo() {
@@ -70,6 +69,14 @@ public class Motor {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    
+    public int getOptimo() {
+        return optimo;
+    }
+
+    public void setOptimo(int optimo) {
+        this.optimo = optimo;
     }
     
 }

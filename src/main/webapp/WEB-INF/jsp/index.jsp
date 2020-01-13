@@ -5,15 +5,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Aplicación de gesstión de motores</title>
     </head>
 
     <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        <p><i>To display a different welcome page for this project, modify</i>
-            <tt>index.jsp</tt> <i>, or create your own welcome page then change
-                the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
-                welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
+        <h1> Gestor de motores</h1>
+        <p>Bienvenido/a al gestor de motores</p>
+        <p>Para dar de alta un motor, ingrese al link a continuación.</p>
+        <a href="alta.htm" >Formulario motor</a>
     </body>
 </html>

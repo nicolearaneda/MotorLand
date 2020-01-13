@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Clase java donde se comprueban distintas condiciones que tienen que cumplir los 
+atributos de la clase Motor.
  */
 package araneda.nicole.Models;
-
-
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-
+//Implementamos el método comprueba_motor con la interface Validator.
 public class Comprueba_Motor implements Validator {
-    
+    private int div;
     @Override
     public boolean supports(Class<?> type) 
     {
@@ -25,29 +21,30 @@ public class Comprueba_Motor implements Validator {
     public void validate(Object o, Errors errors) {
         
         Motor mot=(Motor)o;
-        
+        //Acá se exige que se tiene que escribir el modelo.
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "modelo",
         "required.modelo", "El campo modelo es Obligatorio.");
 
         if (mot.getModelo().length()!=5)
-        {
-            errors.rejectValue("modelo", "verificamodelo","el modelo debe contener cinco caracteres");
+        { //Si el modelo no tiene 5 caracteres, se muestra una ventana que dice que debe tenerlos.
+            errors.rejectValue("modelo", "verificamodelo","El modelo debe contener cinco caracteres");
         }
         
         if(mot.getPotencia()<0)
         {
-	    errors.rejectValue("potencia", "verificapotencia","la potencia debe ser mayor a cero");
+	    errors.rejectValue("potencia", "verificapotencia","La potencia debe ser mayor a cero.");
 	}
         
         if (mot.getPeso()<0)
         {
-            errors.rejectValue("Peso", "verificapeso","el peso debe ser mayor a cero");
+            errors.rejectValue("peso", "verificapeso","El peso debe ser mayor a cero.");
         }
         
         if (mot.getCantidad()==0)
         {
-            errors.rejectValue("cantidad", "verificacantidad","la cantidad no puede ser cero");
+            errors.rejectValue("cantidad", "verificacantidad","La cantidad no puede ser cero.");
         }
+        
     }
     
 }

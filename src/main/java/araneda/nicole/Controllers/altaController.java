@@ -16,16 +16,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("alta.htm")
 public class altaController {
     
-    
     private JdbcTemplate jdbcTemplate;
     private Comprueba_Motor comprobar;
     
     public altaController() 
-    {
-                Conectar con=new Conectar();
+    {//Generamos la conexión
+        Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar() );
         this.comprobar = new Comprueba_Motor();
     }
+    
+    //Modulo alta 
     @RequestMapping(method=RequestMethod.GET) 
     public ModelAndView alta()
     {
@@ -53,9 +54,9 @@ public class altaController {
         {
         this.jdbcTemplate.update 
         (
-        "insert into motor (modelo,fabricante,potencia,peso,cantidad) values (?,?,?,?,?)",
-         m.getModelo(),m.getFabricante(),m.getPotencia(),m.getPeso(),m.getCantidad());
-         return new ModelAndView("redirect:/alta.htm");
+        "insert into motor (modelo,fabricante,potencia,peso,cantidad, optimo) values (?,?,?,?,?,?)",
+         m.getModelo(),m.getFabricante(),m.getPotencia(),m.getPeso(),m.getCantidad(),m.getOptimo());
+         return new ModelAndView("redirect:/listado.htm");
         }
     }
        
