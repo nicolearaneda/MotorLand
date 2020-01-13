@@ -20,6 +20,8 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="alta.htm">altaController</prop>
+
             </props>
         </property>
     </bean>
@@ -36,4 +38,7 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
 
+     <bean name="altaController"
+          class="araneda.nicole.Controllers.altaController"
+          />
 </beans>
