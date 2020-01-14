@@ -41,9 +41,12 @@
                                 <td><c:out value="${motor.peso}" /></td>
                                 <td><c:out value="${motor.cantidad}" /></td>
                                 <td>
-                               <c:if test="${(motor.optimo < 10)}">
-                               <b>Sí</b><br/>
-                               </c:if>
+                                <c:if test="${((motor.peso/motor.potencia) < 10)}">
+                                <b>Sí</b><br/>
+                                </c:if>
+                                <c:if test="${((motor.peso/motor.potencia) > 10)}">
+                                <b>No</b><br/>
+                                </c:if>
                                 </td>
                              </tr>
                         </c:forEach>

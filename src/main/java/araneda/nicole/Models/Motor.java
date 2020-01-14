@@ -28,7 +28,7 @@ public class Motor {
         this.potencia = potencia;
         this.peso = peso;
         this.cantidad = cantidad;
-        this.optimo = (peso/potencia);
+        this.optimo = optimo;
     }
 
     public String getModelo() {
